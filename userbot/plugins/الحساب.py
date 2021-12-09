@@ -869,7 +869,8 @@ async def autobio_loop():
     AUTOBIOSTART = gvarstatus("نبذه وقتيه") == "true"
     while AUTOBIOSTART:
         HM = time.strftime("%I:%M")
-        FONT1 = requests.get(f"https://telethon.ml/Dont1Tag.php?text={HM}").json()['newText']
+        Dont1Tags = gvarstatus("FONTS_AUTO") or "Dont1Tag"
+        FONT1 f= requests.get(f"https://telethon.ml/{Dont1Tags}.php?text={HM}").json()['newText']
         FONT2 = requests.get(f"https://telethon.ml/Dont2Tag.php?text={HM}").json()['newText']
         FONT3 = requests.get(f"https://telethon.ml/Dont3Tag.php?text={HM}").json()['newText']
         FONT4 = requests.get(f"https://telethon.ml/Dont4Tag.php?text={HM}").json()['newText']
