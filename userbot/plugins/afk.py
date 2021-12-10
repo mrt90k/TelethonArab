@@ -1,22 +1,14 @@
 import asyncio
 from datetime import datetime
-
 from telethon.tl import functions, types
-
 from userbot import iqthon
-
 from ..Config import Config
 from ..core.logger import logging
 from ..core.managers import edit_delete, edit_or_reply
 from ..helpers.tools import media_type
 from ..helpers.utils import _format
 from . import BOTLOG, BOTLOG_CHATID
-
-plugin_category = "utils"
-
 LOGS = logging.getLogger(__name__)
-
-
 class AFK:
     def __init__(self):
         self.USERAFK_ON = {}
@@ -32,8 +24,6 @@ class AFK:
 
 
 AFK_ = AFK()
-
-
 @iqthon.iq_cmd(outgoing=True, edited=False)
 async def set_not_afk(event):
     if AFK_.afk_on is False:
@@ -58,31 +48,16 @@ async def set_not_afk(event):
         else:
             endtime += f"{m}m {s}s" if m > 0 else f"{s}s"
     current_message = event.message.message
-    if (("afk" not in current_message) or ("#afk" not in current_message)) and (
-        "on" in AFK_.USERAFK_ON
-    ):
-        shite = await event.client.send_message(
-            event.chat_id,
-            "`Back alive! No Longer afk.\nWas afk for " + endtime + "`",
-        )
+    if (("afk" not in current_message) or ("#afk" not in current_message)) and (        "on" in AFK_.USERAFK_ON    ):
+        shite = await event.client.send_message(            event.chat_id,            "تم الغاء وضع النائم .\nبسبب الرد على الرسائل " + endtime + "`",        )
         AFK_.USERAFK_ON = {}
         AFK_.afk_time = None
         await asyncio.sleep(5)
         await shite.delete()
         AFK_.afk_on = False
         if BOTLOG:
-            await event.client.send_message(
-                BOTLOG_CHATID,
-                "#AFKFALSE \n`Set AFK mode to False\n"
-                + "Back alive! No Longer afk.\nWas afk for "
-                + endtime
-                + "`",
-            )
-
-
-@iqthon.iq_cmd(
-    incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False
-)
+            await event.client.send_message(                BOTLOG_CHATID,                "#وضع النائم \nتوقف\n"                + "تم الغاء وضع النائم .\nبسبب الرد على الرسائل "                + endtime                + "`",            )
+@iqthon.iq_cmd(    incoming=True, func=lambda e: bool(e.mentioned or e.is_private), edited=False)
 async def on_afk(event):  # sourcery no-metrics
     if AFK_.afk_on is False:
         return
@@ -114,22 +89,16 @@ async def on_afk(event):  # sourcery no-metrics
         msg = None
         if AFK_.afk_type == "media":
             if AFK_.reason:
-                message_to_reply = (
-                    f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال  👁‍🗨** .\n\n**⌔︙ وضع عدم الاتصال منذ 🕐 :** `{endtime}`"
-                )
+                message_to_reply = (                    f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال  👁‍🗨** .\n\n**⌔︙ وضع عدم الاتصال منذ 🕐 :** `{endtime}`"                )
             else:
                 message_to_reply = f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال  👁‍🗨** .\n\n**⌔︙ وضع عدم الاتصال منذ 🕐 :** `{endtime}`"
             if event.chat_id:
                 msg = await event.reply(message_to_reply, file=AFK_.media_afk.media)
         elif AFK_.afk_type == "text":
             if AFK_.msg_link and AFK_.reason:
-                message_to_reply = (
-                    f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال  👁‍🗨** .\n\n**⌔︙ وضع عدم الاتصال منذ 🕐 :** `{endtime}`"
-                )
+                message_to_reply = (                    f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال  👁‍🗨** .\n\n**⌔︙ وضع عدم الاتصال منذ 🕐 :** `{endtime}`"                )
             elif AFK_.reason:
-                message_to_reply = (
-                    f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال  👁‍🗨** .\n\n**⌔︙ وضع عدم الاتصال منذ 🕐 :** `{endtime}` "
-                )
+                message_to_reply = (                    f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال  👁‍🗨** .\n\n**⌔︙ وضع عدم الاتصال منذ 🕐 :** `{endtime}` "                )
             else:
                 message_to_reply = f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال  👁‍🗨** .\n\n**⌔︙ وضع عدم الاتصال منذ 🕐 :** `{endtime}`"
             if event.chat_id:
@@ -155,34 +124,11 @@ async def on_afk(event):  # sourcery no-metrics
             resalt += f"\n<b>⌔︙ الـرسالـة 📧 : </b><code>{messaget}</code>"
         else:
             resalt += f"\n<b>⌔︙ الـرسالـة 📧 : </b>{event.message.message}"
-        resalt += f"\n<b>⌔︙ رابـط الـرسالـة 🔗  : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>"
+        resalt += f"\n<b>⌔︙ رابـط الـرسالـة 🔗  : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> الرابط</a>"
         if not event.is_private:
-            await event.client.send_message(
-                Config.PM_LOGGER_GROUP_ID,
-                resalt,
-                parse_mode="html",
-                link_preview=False,
-            )
-
-
-@iqthon.iq_cmd(
-    pattern="وضع النائم(?:\s|$)([\s\S]*)",
-    command=("وضع النائم", plugin_category),
-    info={
-        "header": "Enables afk for your account",
-        "description": "When you are in afk if any one tags you then your bot will reply as he is offline.\
-        AFK mean away from keyboard.",
-        "options": "If you want AFK reason with hyperlink use [ ; ] after reason, then paste the media link.",
-        "usage": [
-            "{tr}afk <reason>",
-            "{tr}afk <reason> ; <link>",
-        ],
-        "examples": "{tr}afk Let Me Sleep",
-        "note": "Switches off AFK when you type back anything, anywhere. You can use #afk in message to continue in afk without breaking it",
-    },
-)
+            await event.client.send_message(                Config.PM_LOGGER_GROUP_ID,                resalt,                parse_mode="html",                link_preview=False,            )
+@iqthon.iq_cmd(    pattern="وضع النائم(?:\s|$)([\s\S]*)",)
 async def _(event):
-    "To mark yourself as afk i.e. Away from keyboard"
     AFK_.USERAFK_ON = {}
     AFK_.afk_time = None
     AFK_.last_afk_message = {}
@@ -200,58 +146,27 @@ async def _(event):
         else:
             AFK_.reason = input_str
             AFK_.msg_link = False
-        last_seen_status = await event.client(
-            functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
-        )
+        last_seen_status = await event.client(            functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())        )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
             AFK_.afk_time = datetime.now()
         AFK_.USERAFK_ON = f"on: {AFK_.reason}"
         if AFK_.reason:
-            await edit_delete(
-                event, f"⌔︙ عذرا انا الان في وضعيه عدم الاتصال يرجـى المراسلة لاحقـا بسـبب  {AFK_.reason} ✔️", 5
-            )
+            await edit_delete(                event, f"⌔︙ عذرا انا الان في وضعيه عدم الاتصال يرجـى المراسلة لاحقـا بسـبب  {AFK_.reason} ✔️", 5            )
         else:
             await edit_delete(event, f"**⌔︙ عذرا انا الان في وضعيه عدم الاتصال يرجـى المراسلة لاحقـا ✔️**", 5)
         if BOTLOG:
             if AFK_.reason:
-                await event.client.send_message(
-                    BOTLOG_CHATID,
-                    f"**⌔︙ وضع النائم 👁‍🗨 :** \n **تم تشغيل الوضع بسبب ✔️** {AFK_.reason}",
-                )
+                await event.client.send_message(                    BOTLOG_CHATID,                    f"**⌔︙ وضع النائم 👁‍🗨 :** \n **تم تشغيل الوضع بسبب ✔️** {AFK_.reason}",                )
             else:
-                await event.client.send_message(
-                    BOTLOG_CHATID,
-                    f"**⌔︙ وضع النائم 👁‍🗨 :** \n **تم تشغيل الوضع ✔️**",
-                )
-
-
-@iqthon.iq_cmd(
-    pattern="mafk(?:\s|$)([\s\S]*)",
-    command=("mafk", plugin_category),
-    info={
-        "header": "Enables afk for your account",
-        "description": "When you are in afk if any one tags you then your bot will reply as he is offline.\
-         AFK mean away from keyboard. Here it supports media unlike afk command",
-        "options": "If you want AFK reason with hyperlink use [ ; ] after reason, then paste the media link.",
-        "usage": [
-            "{tr}mafk <reason> and reply to media",
-        ],
-        "examples": "{tr}mafk Let Me Sleep",
-        "note": "Switches off AFK when you type back anything, anywhere. You can use #afk in message to continue in afk without breaking it",
-    },
-)
+                await event.client.send_message(                    BOTLOG_CHATID,                    f"**⌔︙ وضع النائم 👁‍🗨 :** \n **تم تشغيل الوضع ✔️**",                )
+@iqthon.iq_cmd(    pattern="mafk(?:\s|$)([\s\S]*)",)
 async def _(event):
-    "To mark yourself as afk i.e. Away from keyboard (supports media)"
     reply = await event.get_reply_message()
     media_t = media_type(reply)
     if media_t == "Sticker" or not media_t:
-        return await edit_or_reply(
-            event, "`You haven't replied to any media to activate media afk`"
-        )
+        return await edit_or_reply(            event, "`You haven't replied to any media to activate media afk`"        )
     if not BOTLOG:
-        return await edit_or_reply(
-            event, "`To use media afk you need to set PRIVATE_GROUP_BOT_API_ID config`"
-        )
+        return await edit_or_reply(            event, "`To use media afk you need to set PRIVATE_GROUP_BOT_API_ID config`"        )
     AFK_.USERAFK_ON = {}
     AFK_.afk_time = None
     AFK_.last_afk_message = {}
@@ -264,26 +179,16 @@ async def _(event):
     if not AFK_.USERAFK_ON:
         input_str = event.pattern_match.group(1)
         AFK_.reason = input_str
-        last_seen_status = await event.client(
-            functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())
-        )
+        last_seen_status = await event.client(            functions.account.GetPrivacyRequest(types.InputPrivacyKeyStatusTimestamp())        )
         if isinstance(last_seen_status.rules, types.PrivacyValueAllowAll):
             AFK_.afk_time = datetime.now()
         AFK_.USERAFK_ON = f"on: {AFK_.reason}"
         if AFK_.reason:
-            await edit_delete(
-                event, f"`I shall be Going afk! because ~` {AFK_.reason}", 5
-            )
+            await edit_delete(                event, f"`I shall be Going afk! because ~` {AFK_.reason}", 5            )
         else:
             await edit_delete(event, f"`I shall be Going afk! `", 5)
         AFK_.media_afk = await reply.forward_to(BOTLOG_CHATID)
         if AFK_.reason:
-            await event.client.send_message(
-                BOTLOG_CHATID,
-                f"#AFKTRUE \nSet AFK mode to True, and Reason is {AFK_.reason}",
-            )
+            await event.client.send_message(                BOTLOG_CHATID,                f"#AFKTRUE \nSet AFK mode to True, and Reason is {AFK_.reason}",            )
         else:
-            await event.client.send_message(
-                BOTLOG_CHATID,
-                f"#AFKTRUE \nSet AFK mode to True, and Reason is Not Mentioned",
-            )
+            await event.client.send_message(                BOTLOG_CHATID,                f"#AFKTRUE \nSet AFK mode to True, and Reason is Not Mentioned",            )
