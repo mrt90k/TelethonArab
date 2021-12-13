@@ -4,7 +4,7 @@ from .Config import Config
 from .core.logger import logging
 from .core.session import iqthon
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
-__version__ = "6.8"
+__version__ = "7.2"
 __license__ = "GNU Affero General Public License v3.0"
 __author__ = "<t.me/iqthon>"
 __copyright__ = "telethon AR (C) 2020 - 2021  " + __author__
@@ -13,7 +13,7 @@ iqthon.tgbot.version = __version__
 LOGS = logging.getLogger("IQTHON")
 bot = iqthon
 StartTime = time.time()
-catversion = "6.8"
+catversion = "7.2"
 if Config.UPSTREAM_REPO == "Telethon-Ar":
     UPSTREAM_REPO_URL = "https://github.com/telethon-Arab/telethonNow"
 else:
