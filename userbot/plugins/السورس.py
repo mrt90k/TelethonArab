@@ -113,16 +113,13 @@ async def iq(iqthonevent):
             return await edit_or_reply(iqevent)
     else:
         await edit_or_reply(iqevent,caption)
-fahs = """**{ALIVE_TEXT}**
-𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻
-**{EMOJI}  النسخـة :  ِ7.1 ** 
-**{EMOJI} مـدة الـتشغيل  : {uptime} **
-**{EMOJI} حسـابك  :   {my_mention} **
-**{EMOJI} الـوقت  : {TM} **
-**{EMOJI} البنك :** {ping} 
-**{EMOJI} البوت :** {tg_bot}
-**{EMOJI} السـورس :** @IQTHON 
-𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"""
+fahs = """.𓄌 : me  {my_mention}  𓇡.
+.𓄌 : time  {TM}  𓇡.
+.𓄌 : up time  {uptime}  𓇡.
+.𓄌 : My Bot  {tg_bot}  𓇡.
+.𓄌 : ping  {ping}  𓇡.
+.𓄌 : version 7.2  𓇡.
+.𓄌 : Source TelethonArab : @iqthon  𓇡."""
 @iqthon.on(admin_cmd(pattern="رابط التنصيب(?: |$)(.*)"))    
 async def source(e):
     await edit_or_reply(e, "https://dashboard.heroku.com/new?template=https://github.com/telethon-Arab/telethohelp",)
