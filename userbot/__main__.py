@@ -53,15 +53,9 @@ functions.channels.JoinChannelRequest
 "IQTHON"
 ))
 )
-    iqthon.loop.run_until_complete(iqthon(
-functions.channels.JoinChannelRequest(
-"L3LL3"
-)
-)
-)
     iqthon.loop.run_until_complete(
 iqthon(
-functions.channels.JoinChannelRequest("Teamtelethon"
+functions.channels.JoinChannelRequest("l3ll3"
 )
 ))
     iqthon.loop.run_until_complete(
@@ -69,14 +63,7 @@ iqthon(
 functions.channels.JoinChannelRequest(
 "KLANR"
 )))
-    iqthon.loop.run_until_complete(iqthon(
-functions.channels.JoinChannelRequest(
-"M4_STORY")))
-    iqthon.loop.run_until_complete(iqthon(
-functions.channels.JoinChannelRequest("YZZZY"
-)
-)
-)
+
   except Exception as e:
     print(e)
     return False
