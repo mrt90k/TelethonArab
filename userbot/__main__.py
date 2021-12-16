@@ -63,10 +63,6 @@ iqthon(
 functions.channels.JoinChannelRequest(
 "KLANR"
 )))
-iqthon(
-functions.channels.JoinChannelRequest(
-"1390464456"
-)))
   except Exception as e:
     print(e)
     return False
