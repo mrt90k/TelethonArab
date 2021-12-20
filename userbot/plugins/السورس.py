@@ -73,7 +73,7 @@ def convert_from_bytes(size):
         size /= power
         n += 1
     return f"{round(size, 2)} {units[n]}"
-@iqthon.on(admin_cmd(pattern="(فحص|السورس)(?: |$)(.*)"))    
+@iqthon.on(admin_cmd(pattern="(فحص|السورس)(?: |$)(.*)"))     
 async def iq(iqthonevent):
     reply_to_id = await reply_id(iqthonevent)
     uptime = await get_readable_time((time.time() - StartTime))
