@@ -56,8 +56,6 @@ def time_formatter(milliseconds: int) -> str:
 @iqthon.on(admin_cmd(pattern="تنزيل( فيديو| صوت) (.*)"))
 @iqthon.on(sudo_cmd(pattern="تنزيل( فيديو| صوت) (.*)", allow_sudo=True))
 async def download_video(v_url):
-    if v_url.fwd_from:
-        return
     url = v_url.pattern_match.group(2)
     type = v_url.pattern_match.group(1).lower()
 
