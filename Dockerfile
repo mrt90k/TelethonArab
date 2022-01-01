@@ -1,6 +1,6 @@
-FROM telethon-Arab/telethonNow:slim-buster
+FROM telethonAr/telethonArab:slim-buster
 
-RUN git clone https://github.com/telethon-Arab/telethonNow.git /root/userbot
+RUN git clone https://github.com/telethonAr/TelethonArab.git /root/userbot
 WORKDIR /root/userbot
 
 ## Install requirements
