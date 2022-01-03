@@ -206,9 +206,9 @@ async def amireallyalive(event):
 #if Config.PLUGIN_CHANNEL:
 
     #async def install():
-      $  documentss = await iqthon.get_messages(            Config.PLUGIN_CHANNEL, None, filter=InputMessagesFilterDocument        )
+     # $  documentss = await iqthon.get_messages(            Config.PLUGIN_CHANNEL, None, filter=InputMessagesFilterDocument        )
      #   total = int(documentss.total)
-        for module in range(total):
+     #   for module in range(total):
         #    plugin_to_install = documentss[module].id
         #    plugin_name = documentss[module].file.name
          #   if os.path.exists(f"userbot/plugins/{plugin_name}"):
@@ -216,7 +216,7 @@ async def amireallyalive(event):
         #    downloaded_file_name = await iqthon.download_media(                await iqthon.get_messages(Config.PLUGIN_CHANNEL, ids=plugin_to_install),                "userbot/plugins/",            )
       #      path1 = Path(downloaded_file_name)
       #      shortname = path1.stem
-            flag = True
+           # flag = True
        #     check = 0
           #  while flag:
           #      try:
@@ -225,9 +225,9 @@ async def amireallyalive(event):
             #    except ModuleNotFoundError as e:
         #            install_pip(e.name)
        #             check += 1
-                    if check > 5:
+                 #   if check > 5:
       #                  break
-            if BOTLOG:
+           # if BOTLOG:
      #           await iqthon.send_message(                    BOTLOG_CHATID,                    f"**⎈ ⦙   تحـميل المـلف 🗂️  : `{os.path.basename(downloaded_file_name)}`  تـم بنجـاح ✔️**",                )
 
  #   iqthon.loop.create_task(install())
