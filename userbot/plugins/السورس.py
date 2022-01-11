@@ -49,7 +49,7 @@ from SQL.extras import *
 ALIVE = gvarstatus("OR_ALIVE") or "(فحص|السورس)"
 UPDATE = gvarstatus("OR_UPDATE") or "(اعاده تشغيل|تحديث)"
 ORDERS = gvarstatus("OR_ORDERS") or "(اوامري|أوامري)"
-IQTHONPC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/7fe6990ff2291b21af220.mp4"
+IQTHONPC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/ec7b698b4f2f821421169.mp4"
 LOGS = logging.getLogger(os.path.basename(__name__))
 LOGS1 = logging.getLogger(__name__)
 ppath = os.path.join(os.getcwd(), "temp", "githubuser.jpg")
@@ -65,7 +65,7 @@ vlist = [    "ALIVE_PIC",    "ALIVE_EMOJI",    "ALIVE_TELETHONIQ",    "ALIVE_TEX
 DELETE_TIMEOUT = 5
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 oldvars = {    "PM_PIC": "pmpermit_pic",    "PM_TEXT": "pmpermit_txt",    "PM_BLOCK": "pmblock",}
-IQPIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/7fe6990ff2291b21af220.mp4"
+IQPIC = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/ec7b698b4f2f821421169.mp4"
 def convert_from_bytes(size):
     power = 2 ** 10
     n = 0
@@ -85,7 +85,7 @@ async def iq(iqthonevent):
     _, check_sgnirts = check_data_base_heal_th()
     EMOJI = gvarstatus("ALIVE_EMOJI") or "⎈ ⦙"
     ALIVE_TEXT = gvarstatus("ALIVE_TEXT") or "𝗐𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝖾𝗅𝖾𝗍𝗁𝗈𝗇 𝖺𝗅 𝖺𝗋𝖺𝖻 𓃠"
-    IQTHON_IMG = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/7fe6990ff2291b21af220.mp4"
+    IQTHON_IMG = gvarstatus("ALIVE_PIC") or "https://telegra.ph/file/ec7b698b4f2f821421169.mp4"
     tg_bot = Config.TG_BOT_USERNAME
     me = await iqthonevent.client.get_me()
     my_last = me.last_name
@@ -119,11 +119,11 @@ fahs = """.𓄌 : me  {my_mention}  𓇡.
 .𓄌 : up time  {uptime}  𓇡.
 .𓄌 : My Bot  {tg_bot}  𓇡.
 .𓄌 : ping  {ping}  𓇡.
-.𓄌 : version 7.3  𓇡.
+.𓄌 : version 7.4  𓇡.
 .𓄌 : Source TelethonArab : @iqthon  𓇡."""
 @iqthon.on(admin_cmd(pattern="رابط التنصيب(?: |$)(.*)"))    
 async def source(e):
-    await edit_or_reply(e, "https://dashboard.heroku.com/new?template=https://github.com/telethon-Arab/TELETHONPACK",)
+    await edit_or_reply(e, "https://github.com/telethonAr/TelethonArab",)
 @iqthon.on(admin_cmd(pattern="حساب كيثاب( -l(\d+))? ([\s\S]*)"))    
 async def _(event):
     reply_to = await reply_id(event)
