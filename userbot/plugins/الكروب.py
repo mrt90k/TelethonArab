@@ -67,14 +67,14 @@ LOGS = logging.getLogger(__name__)
 plugin_category = "utils"
 MUTE = gvarstatus("OR_MUTE") or "(ميوت|كتم)"
 TFLASH = gvarstatus("OR_TFLASH") or "(طرد الكل|تفليش)"
-UNMUTE = gvarstatus("OR_UNMUTE") or "(ميوت|كتم)"
+UNMUTE = gvarstatus("OR_UNMUTE") or "الغاء كتم"
 addition = gvarstatus("OR_ADD") or "(أضافه|اضافه)"
 LEFT = gvarstatus("OR_LEFT") or "(مغادره|غادر)"
 REMOVEBAN = gvarstatus("OR_REMOVEBAN") or "مسح المحظورين"
 LINKK = gvarstatus("OR_LINK") or "(رابط|الرابط)"
 ADMINRAISE = gvarstatus("OR_ADMINRAISE") or "رفع مشرف"
 UNADMINRAISE = gvarstatus("OR_UNADMINRAISE") or "تنزيل مشرف"
-BANDD = gvarstatus("OR_BAND") or "جظر"
+BANDD = gvarstatus("OR_BAND") or "حظر"
 UNBANDD = gvarstatus("OR_UNBAND") or "الغاء الحظر"
 TYPES = [
     "Photo",
