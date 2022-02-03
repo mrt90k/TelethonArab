@@ -386,7 +386,7 @@ async def gps(event):
         await catevent.delete()
     else:
         await catevent.edit("⎈ ⦙   عـذراً، لـم أستطـع إيجـاده  ⚠️")
-async def ocr_iqthon(filename, overlay=False,api_key="160984b1d988957", language="eng"):
+async def ocr_iqthon(filename, overlay=False,api_key="K88942796188957", language="eng"):
     payload = {"isOverlayRequired": overlay,"apikey": api_key,"language": language}
     with open(filename, "rb") as f:
         r = requests.post("https://api.ocr.space/parse/image",files={filename: f},data=payload)
