@@ -4,7 +4,7 @@ from .Config import Config
 from .core.logger import logging
 from .core.session import iqthon
 from .sql_helper.globals import addgvar, delgvar, gvarstatus
-__version__ = "7.3"
+__version__ = "7.5"
 __license__ = "GNU Affero General Public License v3.0"
 __author__ = "<t.me/iqthon>"
 __copyright__ = "telethon AR (C) 2020 - 2021  " + __author__
