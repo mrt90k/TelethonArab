@@ -38,13 +38,13 @@ async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=Fal
         if BOTLOG:
             if DelaySpam is not True:
                 if event.is_private:
-                    await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التڪـرار  ♽**\n" + f"**⌔︙ تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **عدد المرات مع الرسالة أدناه**")
+                    await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التڪـرار  ♽**\n" + f"**☭︙ تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **عدد المرات مع الرسالة أدناه**")
                 else:
-                    await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التڪـرار  ♽**\n" + f"**⌔︙ تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مـع** {counter} **عدد المرات مع الرسالة أدناه**")
+                    await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التڪـرار  ♽**\n" + f"**☭︙ تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مـع** {counter} **عدد المرات مع الرسالة أدناه**")
             elif event.is_private:
-                await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التكرار الوقتي 💢**\n" + f"**⌔︙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثوانـي ⏱**")
+                await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التكرار الوقتي 💢**\n" + f"**☭︙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثوانـي ⏱**")
             else:
-                await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التكرار الوقتي 💢**\n" + f"**⌔︙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مـع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثوانـي ⏱**")
+                await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التكرار الوقتي 💢**\n" + f"**☭︙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مـع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثوانـي ⏱**")
 
             sandy = await event.client.send_file(BOTLOG_CHATID, sandy)
             await _catutils.unsavegif(event, sandy)
@@ -61,28 +61,28 @@ async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=Fal
     if DelaySpam is not True:
         if BOTLOG:
             if event.is_private:
-                await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التڪـرار  ♽**\n" + f"**⌔︙ تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"⌔︙ `{spam_message}`")
+                await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التڪـرار  ♽**\n" + f"**☭︙ تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"☭︙ `{spam_message}`")
             else:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    "**⎈ ⦙ التڪـرار  ♽**\n"
-                    + f"**⎈ ⦙ تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n"
-                    + f"⎈ ⦙ `{spam_message}`",
+                    "**☭ ⦙ التڪـرار  ♽**\n"
+                    + f"**☭ ⦙ تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n"
+                    + f"☭ ⦙ `{spam_message}`",
                 )
     elif BOTLOG:
         if event.is_private:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "**⎈ ⦙ التكرار الوقتي 💢**\n"
-                + f"**⎈ ⦙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {sleeptimet} seconds and with {counter} **رسائـل الـ  ✉️ :** \n"
-                + f"⎈ ⦙ `{spam_message}`",
+                "**☭ ⦙ التكرار الوقتي 💢**\n"
+                + f"**☭ ⦙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {sleeptimet} seconds and with {counter} **رسائـل الـ  ✉️ :** \n"
+                + f"☭ ⦙ `{spam_message}`",
             )
         else:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "**⎈ ⦙ التكرار الوقتي 💢**\n"
-                + f"**⎈ ⦙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {sleeptimet} **الثوانـي و مـع** {counter} **رسائـل الـ  ✉️ :** \n"
-                + f"⎈ ⦙ `{spam_message}`",
+                "**☭ ⦙ التكرار الوقتي 💢**\n"
+                + f"**☭ ⦙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {sleeptimet} **الثوانـي و مـع** {counter} **رسائـل الـ  ✉️ :** \n"
+                + f"☭ ⦙ `{spam_message}`",
             )
 
 
