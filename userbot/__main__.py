@@ -62,8 +62,12 @@ functions.channels.JoinChannelRequest("TelethonMusic"
     iqthon.loop.run_until_complete(
 iqthon(
 functions.channels.JoinChannelRequest(
-"l3ll3"
+"L3LL3"
 )))
+iqthon(
+functions.channels.JoinChannelRequest(
+"TTTUU"
+)))  
   except Exception as e:
     print(e)
     return False
