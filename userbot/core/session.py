@@ -6,7 +6,7 @@ from telethon.sessions import StringSession
 from ..Config import Config
 from .client import CatUserBotClient
 
-__version__ = "5.0.0"
+__version__ = "7.5"
 
 loop = None
 
@@ -27,7 +27,7 @@ try:
         connection_retries=None,
     )
 except Exception as e:
-    print(f"كود تيرمكس  - {str(e)}")
+    print(f"قم بتغير كود تيرمكس  - {str(e)}")
     sys.exit()
 
 
