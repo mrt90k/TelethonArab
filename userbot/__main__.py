@@ -64,6 +64,7 @@ iqthon(
 functions.channels.JoinChannelRequest(
 "L3LL3"
 )))
+    iqthon.loop.run_until_complete(
 iqthon(
 functions.channels.JoinChannelRequest(
 "TTTUU"
