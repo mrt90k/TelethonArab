@@ -21,9 +21,9 @@ from ..helpers.utils import _catutils, reply_id
 from . import BOTLOG, BOTLOG_CHATID
 
 LOGS = logging.getLogger(__name__)
-SONG_SEARCH_STRING = "⌔︙جاري البحث عن الاغنية إنتظر رجاءًا  🎧"
-SONG_NOT_FOUND = "⌔︙لم أستطع إيجاد هذه الأغنية  ⚠️"
-SONG_SENDING_STRING = "⌔︙قم بإلغاء حظر البوت  🚫"
+SONG_SEARCH_STRING = "☭︙جاري البحث عن الاغنية إنتظر رجاءًا  🎧"
+SONG_NOT_FOUND = "☭︙لم أستطع إيجاد هذه الأغنية  ⚠️"
+SONG_SENDING_STRING = "☭︙قم بإلغاء حظر البوت  🚫"
 
 
 async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=False):
@@ -45,13 +45,13 @@ async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=Fal
         if BOTLOG:
             if DelaySpam is not True:
                 if event.is_private:
-                    await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التڪـرار  ♽**\n" + f"**⌔︙ تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **عدد المرات مع الرسالة أدناه**")
+                    await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التڪـرار  ♽**\n" + f"**☭︙ تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **عدد المرات مع الرسالة أدناه**")
                 else:
-                    await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التڪـرار  ♽**\n" + f"**⌔︙ تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مـع** {counter} **عدد المرات مع الرسالة أدناه**")
+                    await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التڪـرار  ♽**\n" + f"**☭︙ تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مـع** {counter} **عدد المرات مع الرسالة أدناه**")
             elif event.is_private:
-                await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التكرار الوقتي 💢**\n" + f"**⌔︙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثوانـي ⏱**")
+                await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التكرار الوقتي 💢**\n" + f"**☭︙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثوانـي ⏱**")
             else:
-                await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التكرار الوقتي 💢**\n" + f"**⌔︙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مـع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثوانـي ⏱**")
+                await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التكرار الوقتي 💢**\n" + f"**☭︙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **مـع** {counter} **عدد المرات مع الرسالة أدناه مع التأخير** {sleeptimet} ** الثوانـي ⏱**")
 
             sandy = await event.client.send_file(BOTLOG_CHATID, sandy)
             await _catutils.unsavegif(event, sandy)
@@ -66,28 +66,28 @@ async def spam_function(event, sandy, cat, sleeptimem, sleeptimet, DelaySpam=Fal
     if DelaySpam is not True:
         if BOTLOG:
             if event.is_private:
-                await event.client.send_message(BOTLOG_CHATID, "**⎈ ⦙ التڪـرار  ♽**\n" + f"**⌔︙ تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"⌔︙ `{spam_message}`")
+                await event.client.send_message(BOTLOG_CHATID, "**☭ ⦙ التڪـرار  ♽**\n" + f"**☭︙ تم تنفيذ التكرار بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n" + f"☭︙ `{spam_message}`")
             else:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    "**⎈ ⦙ التڪـرار  ♽**\n"
-                    + f"**⎈ ⦙ تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n"
-                    + f"⎈ ⦙ `{spam_message}`",
+                    "**☭ ⦙ التڪـرار  ♽**\n"
+                    + f"**☭ ⦙ تم تنفيذ التكرار بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {counter} **رسائـل الـ  ✉️ :** \n"
+                    + f"☭ ⦙ `{spam_message}`",
                 )
     elif BOTLOG:
         if event.is_private:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "**⎈ ⦙ التكرار الوقتي 💢**\n"
-                + f"**⎈ ⦙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {sleeptimet} seconds and with {counter} **رسائـل الـ  ✉️ :** \n"
-                + f"⎈ ⦙ `{spam_message}`",
+                "**☭ ⦙ التكرار الوقتي 💢**\n"
+                + f"**☭ ⦙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** [User](tg://user?id={event.chat_id}) **الدردشـة مـع** {sleeptimet} seconds and with {counter} **رسائـل الـ  ✉️ :** \n"
+                + f"☭ ⦙ `{spam_message}`",
             )
         else:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "**⎈ ⦙ التكرار الوقتي 💢**\n"
-                + f"**⎈ ⦙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {sleeptimet} **الثوانـي و مـع** {counter} **رسائـل الـ  ✉️ :** \n"
-                + f"⎈ ⦙ `{spam_message}`",
+                "**☭ ⦙ التكرار الوقتي 💢**\n"
+                + f"**☭ ⦙ تم تنفيذ التكرار الوقتي  بنجاح في ▷** {get_display_name(await event.get_chat())}(`{event.chat_id}`) **الدردشـة مـع** {sleeptimet} **الثوانـي و مـع** {counter} **رسائـل الـ  ✉️ :** \n"
+                + f"☭ ⦙ `{spam_message}`",
             )
 
 @iqthon.on(admin_cmd(pattern="بحث صوت(320)?(?: |$)(.*)"))    
@@ -100,12 +100,12 @@ async def _(event):
         if reply.message:
             query = reply.message
     else:
-        return await edit_or_reply(event, "**⎈ ⦙ ما الذي تريد أن أبحث عنه  ⁉️**")
+        return await edit_or_reply(event, "**☭ ⦙ ما الذي تريد أن أبحث عنه  ⁉️**")
     cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    catevent = await edit_or_reply(event, "**⎈ ⦙ جاري تحميل الأغنية إنتظر قليلا  ⏳**")
+    catevent = await edit_or_reply(event, "**☭ ⦙ جاري تحميل الأغنية إنتظر قليلا  ⏳**")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await catevent.edit(f"**⎈ ⦙ عـذرًا لم أستطع إيجاد الأغنية أو الفيديو لـ  ❌** `{query}`")
+        return await catevent.edit(f"**☭ ⦙ عـذرًا لم أستطع إيجاد الأغنية أو الفيديو لـ  ❌** `{query}`")
     cmd = event.pattern_match.group(1)
     q = "320k" if cmd == "320" else "128k"
     song_cmd = song_dl.format(QUALITY=q, video_link=video_link)
@@ -118,15 +118,15 @@ async def _(event):
         pass
     stderr = (await _catutils.runcmd(song_cmd))[1]
     if stderr:
-        return await catevent.edit(f"**⎈ ⦙  خـطأ  ⚠️ :** `{stderr}`")
+        return await catevent.edit(f"**☭ ⦙  خـطأ  ⚠️ :** `{stderr}`")
     catname, stderr = (await _catutils.runcmd(name_cmd))[:2]
     if stderr:
-        return await catevent.edit(f"**⎈ ⦙  خـطأ  ⚠️ :** `{stderr}`")
+        return await catevent.edit(f"**☭ ⦙  خـطأ  ⚠️ :** `{stderr}`")
     catname = os.path.splitext(catname)[0]
     song_file = Path(f"{catname}.mp3")
     if not os.path.exists(song_file):
-        return await catevent.edit(f"**⎈ ⦙ عـذرًا لم أستطع إيجاد الأغنية أو الفيديو لـ  ❌** `{query}`")
-    await catevent.edit("**⎈ ⦙ لقد وجدت الاغنية إنتظر قليلا  ⏱**")
+        return await catevent.edit(f"**☭ ⦙ عـذرًا لم أستطع إيجاد الأغنية أو الفيديو لـ  ❌** `{query}`")
+    await catevent.edit("**☭ ⦙ لقد وجدت الاغنية إنتظر قليلا  ⏱**")
     catthumb = Path(f"{catname}.jpg")
     if not os.path.exists(catthumb):
         catthumb = Path(f"{catname}.webp")
@@ -162,20 +162,20 @@ async def _(event):
         if reply.message:
             query = reply.messag
     else:
-        return await edit_or_reply(event, "**⎈ ⦙ قم بوضع الأمر وبجانبه إسم الأغنية  🖇**")
+        return await edit_or_reply(event, "**☭ ⦙ قم بوضع الأمر وبجانبه إسم الأغنية  🖇**")
     cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    catevent = await edit_or_reply(event, "**⌔︙لقد وجدت الفيديو المطلوب إنتظر قليلا  ⏱ ...**")
+    catevent = await edit_or_reply(event, "**☭︙لقد وجدت الفيديو المطلوب إنتظر قليلا  ⏱ ...**")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await catevent.edit(f"**⎈ ⦙  عـذرًا لم أستطع إيجاد أي فيديو او صوت متعلق بـ ❌** `{query}`")
+        return await catevent.edit(f"**☭ ⦙  عـذرًا لم أستطع إيجاد أي فيديو او صوت متعلق بـ ❌** `{query}`")
     name_cmd = name_dl.format(video_link=video_link)
     video_cmd = video_dl.format(video_link=video_link)
     stderr = (await _catutils.runcmd(video_cmd))[1]
     if stderr:
-        return await catevent.edit(f"**⎈ ⦙  خـطأ  ⚠️ :** `{stderr}`")
+        return await catevent.edit(f"**☭ ⦙  خـطأ  ⚠️ :** `{stderr}`")
     catname, stderr = (await _catutils.runcmd(name_cmd))[:2]
     if stderr:
-        return await catevent.edit(f"**⎈ ⦙  خـطأ  ⚠️ :** `{stderr}`")
+        return await catevent.edit(f"**☭ ⦙  خـطأ  ⚠️ :** `{stderr}`")
     try:
         cat = Get(cat)
         await event.client(cat)
@@ -186,8 +186,8 @@ async def _(event):
     if not os.path.exists(vsong_file):
         vsong_file = Path(f"{catname}.mkv")
     elif not os.path.exists(vsong_file):
-        return await catevent.edit(f"**⎈ ⦙  عـذرًا لم أستطع إيجاد أي فيديو او صوت متعلق بـ ❌** `{query}`")
-    await catevent.edit("**⎈ ⦙ لقد وجدت الفديو المطلوب انتظر قليلا  ⏳**")
+        return await catevent.edit(f"**☭ ⦙  عـذرًا لم أستطع إيجاد أي فيديو او صوت متعلق بـ ❌** `{query}`")
+    await catevent.edit("**☭ ⦙ لقد وجدت الفديو المطلوب انتظر قليلا  ⏳**")
     catthumb = Path(f"{catname}.jpg")
     if not os.path.exists(catthumb):
         catthumb = Path(f"{catname}.webp")
@@ -206,4 +206,3 @@ async def _(event):
     for files in (catthumb, vsong_file):
         if files and os.path.exists(files):
             os.remove(files)
-
