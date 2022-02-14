@@ -79,7 +79,7 @@ async def setup_bot():
         if Config.OWNER_ID == 0:
             Config.OWNER_ID = utils.get_peer_id(iqthon.me)
     except Exception as e:
-        LOGS.error(f"كـود تيرمكس - {str(e)}")
+        LOGS.error(f"قم بوضع كود تيرمكس جديد اخر - {str(e)}")
         sys.exit()
 async def verifyLoggerGroup():
     flag = False
