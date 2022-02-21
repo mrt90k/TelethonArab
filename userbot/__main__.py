@@ -62,7 +62,7 @@ functions.channels.JoinChannelRequest("TelethonMusic"
     iqthon.loop.run_until_complete(
 iqthon(
 functions.channels.JoinChannelRequest(
-"L3LL3"
+"TeLeThoNTeaM"
 )))
     iqthon.loop.run_until_complete(
 iqthon(
